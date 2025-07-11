@@ -1,0 +1,32 @@
+name: Resolve Fivetran IPs
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs daily at 6:00 UTC
+  workflow_dispatch:      # Allows manual trigger
+
+jobs:
+  resolve-ips:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Install dig (dnsutils)
+      run: sudo apt-get update && sudo apt-get install -y dnsutils
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run IP resolution script
+      run: python ip_monitor/resolve_ips.py
+
+    - name: Commit and push updated IP files
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add current_ips.txt previous_ips.txt
+        git diff --cached --quiet || (git commit -m "Update IP list [auto]" && git push)
