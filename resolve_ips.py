@@ -5,7 +5,7 @@ from datetime import datetime
 
 # === CONFIG ===
 DOMAINS = [
-    "eu-central-1.aws.proxy.prod.fivetran.com",
+    "*.eu-central-1.aws.proxy.prod.fivetran.com",
     "orchestrator.fivetran.com"
 ]
 CURRENT_IPS_FILE = Path("current_ips.txt")
