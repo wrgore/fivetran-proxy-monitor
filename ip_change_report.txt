@@ -18,3 +18,15 @@ No IP changes detected.
 === IP Change Check at 2025-07-14 06:21:12 UTC ===
 No IP changes detected.
 
+=== IP Change Check at 2025-07-15 06:20:52 UTC ===
+
+## *.eu-central-1.aws.proxy.prod.fivetran.com
+Added:
++ 3.124.135.103
++ 3.73.198.211
++ 3.78.7.164
+Removed:
+- 18.196.175.54
+- 18.198.122.105
+- 3.65.64.196
+
