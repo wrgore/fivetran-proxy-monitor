@@ -1,6 +1,6 @@
 # *.eu-central-1.aws.proxy.prod.fivetran.com
-3.124.135.103
-3.73.198.211
-3.78.7.164
+18.194.67.128
+3.120.125.236
+35.157.28.238
 # orchestrator.fivetran.com
 35.188.225.82
